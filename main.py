@@ -44,6 +44,8 @@ def check_length(text: str) -> None:
             f"entry text is {n} characters; the gate allows "
             f"{MIN_CHARS} to {MAX_CHARS}"
         )
+    if "\n" in text or "\r" in text:
+        raise SystemExit("entry text must be a single line, no line breaks")
 
 
 def main() -> None:
